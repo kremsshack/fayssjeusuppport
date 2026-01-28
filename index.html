@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centre d'Aide — Chrono-Quest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#home" class="nav-logo">Fayss</a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active">Recherche</a>
+            </li>
+            <li class="nav-item">
+              <a href="#categories" class="nav-link">Catégories</a>
+            </li>
+            <li class="nav-item">
+              <a href="#knowledge-base" class="nav-link">Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a href="#staff" class="nav-link">L'Équipe</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Ouvrir un ticket</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </button>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero section" id="home" style="min-height: 70vh">
+        <div class="hero-bg"></div>
+        <div
+          class="container"
+          style="position: relative; z-index: 2; width: 100%"
+        >
+          <div class="hero-content">
+            <div class="event-banner">
+              <p class="event-badge">STATUS</p>
+              <p>🟢 Serveurs en ligne - Aucun incident détecté</p>
+            </div>
+
+            <h1 class="hero-title">Comment pouvons-nous vous aider ?</h1>
+            <p class="hero-subtitle">
+              Bienvenue sur le support officiel. Recherchez votre problème
+              ci-dessous.
+            </p>
+
+            <div
+              class="search-box-container"
+              style="max-width: 600px; margin: 40px auto"
+            >
+              <input
+                type="text"
+                id="main-search"
+                class="form-input"
+                placeholder="Ex: mot de passe oublié, bug écran noir..."
+                style="
+                  padding: 20px;
+                  font-size: 1.1rem;
+                  border-radius: 50px;
+                  text-align: center;
+                  border: 2px solid rgba(0, 240, 255, 0.3);
+                  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+                "
+              />
+            </div>
+
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-secondary">
+                Je ne trouve pas ma réponse
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="categories"
+        style="background: #0a0e1a; padding-top: 0"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Parcourir par thème</h2>
+          </div>
+
+          <div class="features-grid">
+            <div
+              class="feature-card"
+              onclick="filterHelp('compte')"
+              style="cursor: pointer"
+            >
+              <div class="feature-icon">🔒</div>
+              <h3 class="feature-title">Mon Compte</h3>
+              <p class="feature-text">
+                Problèmes de connexion, mot de passe perdu, changement d'avatar.
+              </p>
+            </div>
+
+            <div
+              class="feature-card"
+              onclick="filterHelp('gameplay')"
+              style="cursor: pointer"
+            >
+              <div class="feature-icon">🎮</div>
+              <h3 class="feature-title">Jeu & Progression</h3>
+              <p class="feature-text">
+                Questions sur les mini-jeux, scores non sauvegardés, étoiles.
+              </p>
+            </div>
+
+            <div
+              class="feature-card"
+              onclick="filterHelp('ecole')"
+              style="cursor: pointer"
+            >
+              <div class="feature-icon">🎓</div>
+              <h3 class="feature-title">Espace Profs & Parents</h3>
+              <p class="feature-text">
+                Gestion des classes, suivi des élèves, abonnements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section patches" id="knowledge-base">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Articles d'aide</h2>
+            <p class="section-subtitle">
+              Les solutions les plus consultées par la communauté
+            </p>
+          </div>
+
+          <div class="patches-list" id="patches-list">
+            <p style="text-align: center; color: #888">
+              Chargement des articles...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section staff" id="staff">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Nos experts sont là</h2>
+            <p class="section-subtitle">
+              Derrière les écrans, de vrais humains pour vous répondre
+            </p>
+          </div>
+
+          <div class="staff-grid">
+            <div class="staff-card">
+              <div class="staff-avatar">CQ</div>
+              <h3 class="staff-name">Fayss</h3>
+              <p class="staff-role">Responsable Technique</p>
+              <p class="staff-bio">
+                Il chasse les bugs serveurs et répare les bases de données.
+              </p>
+            </div>
+            <div class="staff-card">
+              <div class="staff-avatar">CM</div>
+              <h3 class="staff-name">FaYssial</h3>
+              <p class="staff-role">Relation Parents/Profs</p>
+              <p class="staff-bio">
+                Spécialiste des comptes éducatifs et de la gestion de classe.
+              </p>
+            </div>
+            <div class="staff-card">
+              <div class="staff-avatar">Bot</div>
+              <h3 class="staff-name">Féçal</h3>
+              <p class="staff-role">Assistant Automatique</p>
+              <p class="staff-bio">
+                Disponible 24/7 pour les questions simples et les resets de mot
+                de passe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Ouvrir un ticket</h2>
+            <p class="section-subtitle">
+              Vous n'avez pas trouvé la solution ? Écrivez-nous.
+            </p>
+          </div>
+
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <h3 class="contact-info-title">Autres moyens</h3>
+              <div class="contact-item">
+                <p class="contact-icon">💬</p>
+                <div>
+                  <p class="contact-label">Chat en direct</p>
+                  <p>Disponible sur Discord (9h-18h)</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <p class="contact-icon">📧</p>
+                <div>
+                  <p class="contact-label">Email direct</p>
+                  <p>help@chronoquest.game</p>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="category" class="form-label"
+                  >Type de problème</label
+                >
+                <select
+                  id="category"
+                  class="form-input"
+                  style="background: rgba(5, 8, 16, 0.95)"
+                >
+                  <option value="tech">Bug Technique</option>
+                  <option value="account">Problème de Compte</option>
+                  <option value="billing">Paiement / Abo</option>
+                  <option value="other">Autre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label"
+                  >Votre Email (obligatoire)</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="form-input"
+                  placeholder="nom@exemple.fr"
+                  required
+                />
+                <small
+                  style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem"
+                >
+                  * Uniquement les adresses en <b>.fr</b> sont acceptées.
+                </small>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label"
+                  >Description du problème</label
+                >
+                <textarea
+                  id="message"
+                  class="form-textarea"
+                  rows="5"
+                  placeholder="Décrivez ce qui se passe..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                Envoyer le ticket
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <h3 class="footer-title">Chrono-Support</h3>
+            <p class="footer-text">
+              Le centre d'aide officiel pour tous les joueurs, parents et
+              enseignants de l'aventure Chrono-Quest.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4 class="footer-subtitle">Accès rapide</h4>
+            <ul class="footer-list">
+              <li><a href="#home">Recherche</a></li>
+              <li><a href="#knowledge-base">FAQ</a></li>
+              <li><a href="#">Status Serveur</a></li>
+              <li><a href="#contact">Support</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4 class="footer-subtitle">Légal</h4>
+            <div class="footer-list">
+              <li><a href="#">CGU</a></li>
+              <li><a href="#">Confidentialité</a></li>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Chrono-Quest Support. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
